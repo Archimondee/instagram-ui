@@ -5,7 +5,13 @@ import {
     StyleSheet
 } from 'react-native';
 
-import {Icon} from 'native-base';
+import CardComponent from '../CardComponent';
+
+import {
+    Icon,
+    Container,
+    Content
+} from 'native-base';
 
 export default class SearchTab extends Component{
     static navigationOptions = {
@@ -16,9 +22,13 @@ export default class SearchTab extends Component{
 
     render(){
         return(
-            <View style={styles.container}>
-                <Text> Home Tab </Text>
-            </View>
+            <Container style={styles.container}>
+                <Content>
+                    <CardComponent imageSource='1' likes='500'/>
+                    <CardComponent imageSource='2' likes='340'/>
+                    <CardComponent imageSource='3' likes='1654'/>
+                </Content>
+            </Container>
         );
     }
 }
@@ -26,7 +36,6 @@ export default class SearchTab extends Component{
 const styles = StyleSheet.create({
     container:{
         flex:1,
-        alignItems:'center',
-        justifyContent: 'center'
+        backgroundColor: 'white',
     }
 })
